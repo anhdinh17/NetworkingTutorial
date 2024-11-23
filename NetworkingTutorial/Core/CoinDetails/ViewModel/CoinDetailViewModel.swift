@@ -11,9 +11,10 @@ class CoinDetailViewModel: ObservableObject {
     @Published var coinDetail: CoinDetails?
     
     private let coinId: String
-    private let service = CoinDataService()
+    private let service: CoinDataService
     
-    init(coinId: String) {
+    init(service: CoinDataService, coinId: String) {
+        self.service = service
         self.coinId = coinId
         
         /// Important:

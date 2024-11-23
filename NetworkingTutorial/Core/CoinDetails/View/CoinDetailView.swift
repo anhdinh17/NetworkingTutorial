@@ -11,9 +11,11 @@ struct CoinDetailView: View {
     @StateObject var viewModel: CoinDetailViewModel
     let coin: Coin
     
-    init(coin: Coin) {
+    // Dependency Injection
+    init(service: CoinDataService, coin: Coin) {
         self.coin = coin
-        self._viewModel = StateObject(wrappedValue: CoinDetailViewModel(coinId: coin.id))
+        self._viewModel = StateObject(wrappedValue: CoinDetailViewModel(service: service,
+                                                                        coinId: coin.id))
     }
     
     var body: some View {
@@ -39,5 +41,6 @@ struct CoinDetailView: View {
 }
 
 #Preview {
-    CoinDetailView(coin: Coin(name: "Bitcoin", id: "Bitcoin", symbol: "BTC", currentPrice: 123456, marketCapRank: 1))
+    CoinDetailView(service: CoinDataService(),
+                   coin: Coin(name: "Bitcoin", id: "Bitcoin", symbol: "BTC", currentPrice: 123456, marketCapRank: 1))
 }

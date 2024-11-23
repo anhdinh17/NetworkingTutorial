@@ -11,7 +11,8 @@ import SwiftUI
 struct NetworkingTutorialApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            let service = CoinDataService()
+            ContentView(service: service)
         }
     }
 }

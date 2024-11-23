@@ -11,9 +11,11 @@ class CoinsViewModel: ObservableObject {
     @Published var coins: [Coin] = []
     @Published var errorMessage: String?
     
-    private let service = CoinDataService()
+    private let service: CoinDataService
     
-    init() {
+    // Dependency Injection
+    init(service: CoinDataService) {
+        self.service = service
         Task { await fetchCoins() }
     }
     
