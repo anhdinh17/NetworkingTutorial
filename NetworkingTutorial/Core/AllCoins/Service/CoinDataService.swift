@@ -8,6 +8,7 @@
 import Foundation
 
 class CoinDataService: HTTPDataDownloader {
+    
     func fetchCoins() async throws -> [Coin] {
         guard let endpoint = allCoinsURLString else {
             throw CoinAPIError.requestFailed(description: "Invalid URL")
@@ -16,10 +17,25 @@ class CoinDataService: HTTPDataDownloader {
     }
     
     func fetchCoinDetails(id: String) async throws -> CoinDetails? {
+        // Check if we have data in cache
+        if let cached = CoinDetailsCache.shared.get(forKey: id) {
+            // If there's already data in cache, then return it
+            // and stop this function
+            print("Got details from CACHE")
+            return cached
+        }
+        
+        // Keep going if there's nothing in cache
         guard let endpoint = coinDetailsURLString(id: id) else {
             throw CoinAPIError.requestFailed(description: "Invalid URL")
         }
-        return try await fetchData(as: CoinDetails.self, endpoint: endpoint)
+        
+        // Store CoinDetails in cache so we can reuse it next time we come to Detail screen
+        let details = try await fetchData(as: CoinDetails.self, endpoint: endpoint)
+        print("Got details from API")
+        CoinDetailsCache.shared.set(details, forKey: id)
+        
+        return details
     }
     
     // URL COMPONENTS
