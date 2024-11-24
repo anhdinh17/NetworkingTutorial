@@ -47,7 +47,7 @@ class CoinDataService: CoinServiceProtocol, HTTPDataDownloader {
             return cached
         }
         
-        // Keep going if there's nothing in cache
+        // Keep going to fetch data if there's nothing in cache
         guard let endpoint = coinDetailsURLString(id: id) else {
             throw CoinAPIError.requestFailed(description: "Invalid URL")
         }

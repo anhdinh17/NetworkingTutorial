@@ -25,6 +25,9 @@ struct ContentView: View {
                             Text("\(coin.marketCapRank)")
                                 .foregroundStyle(.gray)
                             
+                            CoinImageView(url: coin.image)
+                                .frame(width: 32, height: 32)
+
                             VStack(alignment: .leading) {
                                 Text(coin.name)
                                     .fontWeight(.semibold)
@@ -54,6 +57,17 @@ struct ContentView: View {
                     Text("Error: \(errorText)")
                 }
             }
+        }
+        
+        /** IMPORTANT */
+        // At first, we call this fetchCoins() inside ContentVM's init
+        // But for better performance, we should put it here to avoid complex inside an init
+        // and sometimes it may run twice inside of viewModel's init (which hasn't happened to me yet).
+        //
+        // And we HAVE TO put it under NavStack, if we put it under List, it will keep fetching data every time
+        // List appear. For example, if we go to next screen and go back, List will run this .task again.
+        .task {
+            Task { await viewModel.fetchCoins() }
         }
     }
 }

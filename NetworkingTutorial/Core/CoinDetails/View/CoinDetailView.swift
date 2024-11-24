@@ -22,12 +22,24 @@ struct CoinDetailView: View {
         ScrollView {
             if let details = viewModel.coinDetail {
                 LazyVStack(alignment: .leading) {
-                    Text(details.name)
-                        .fontWeight(.semibold)
-                        .font(.subheadline)
-                    
-                    Text(details.symbol.uppercased())
-                        .font(.footnote)
+                    HStack {
+                        VStack {
+                            Text(details.name)
+                                .fontWeight(.semibold)
+                                .font(.subheadline)
+                            
+                            Text(details.symbol.uppercased())
+                                .font(.footnote)
+                        }
+                        
+                        Spacer()
+                        
+                        // If we already fetch image in List
+                        // when we go this screen, the image is fetched from Cache
+                        // Leave a print in ImageLoader and we'll see it.
+                        CoinImageView(url: coin.image)
+                            .frame(width: 32, height: 32)
+                    }
                     
                     Text(details.description.text)
                 }
@@ -41,6 +53,6 @@ struct CoinDetailView: View {
 }
 
 #Preview {
-    CoinDetailView(service: CoinDataService(),
-                   coin: Coin(name: "Bitcoin", id: "Bitcoin", symbol: "BTC", currentPrice: 123456, marketCapRank: 1))
+    CoinDetailView(service: MockCoinService(),
+                   coin: Coin(name: "Bitcoin", id: "Bitcoin", symbol: "BTC", currentPrice: 123456, marketCapRank: 1, image: "https://coin-images.coingecko.com/coins/images/1/large/bitcoin.png?1696501400"))
 }

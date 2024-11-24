@@ -16,7 +16,6 @@ class CoinsViewModel: ObservableObject {
     // Dependency Injection
     init(service: CoinServiceProtocol) {
         self.service = service
-        Task { await fetchCoins() }
     }
     
     @MainActor
