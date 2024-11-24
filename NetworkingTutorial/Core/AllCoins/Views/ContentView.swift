@@ -32,6 +32,16 @@ struct ContentView: View {
                                 Text(coin.symbol.uppercased())
                             }
                         }
+                        // Pagination
+                        .onAppear {
+                            // When this HStack(cell/row) appears AND it's the last element of
+                            // array, then we want to fetch another junks of coins
+                            if coin == viewModel.coins.last {
+                                // Trigger pagination
+                                print("DEBUG: Trigger pagination")
+                                Task { await viewModel.fetchCoins() }
+                            }
+                        }
                         .font(.footnote)
                     }
                 }

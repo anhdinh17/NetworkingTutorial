@@ -25,7 +25,8 @@ class CoinsViewModel: ObservableObject {
         // we already handle error in do-catch.
         // This func itself doesn't throw any errors.
         do {
-            self.coins = try await service.fetchCoins()
+            let coins = try await service.fetchCoins()
+            self.coins.append(contentsOf: coins)
         } catch {
             // I think error thrown from fetchCoins() are CoinAPIError
             // so we can cast it as CoinAPIError

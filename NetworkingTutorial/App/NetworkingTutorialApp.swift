@@ -12,7 +12,7 @@ struct NetworkingTutorialApp: App {
     var body: some Scene {
         WindowGroup {
             // Injection starts here
-            ContentView(service: MockCoinService())
+            ContentView(service: CoinDataService())
         }
     }
 }
