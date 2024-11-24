@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Create a JSON as Data
 let mockCoinData_marketCapDesc: Data = """
 [
   {
@@ -596,6 +597,75 @@ let mockCoinData_marketCapDesc: Data = """
     "roi": null,
     "last_updated": "2024-11-24T14:44:21.675Z",
     "price_change_percentage_24h_in_currency": -8.992471977025842
+  }
+]
+""".data(using: .utf8)!
+
+//MARK: - Invalid JSON Data
+// Replace name key in bitcoin
+let mockCoins_invalidJSON = """
+[
+  {
+    "id": "bitcoin",
+    "symbol": "btc",
+    "aldsjfl;ajsdl;j": "Bitcoin",
+    "image": "https://coin-images.coingecko.com/coins/images/1/large/bitcoin.png?1696501400",
+    "current_price": 97107,
+    "market_cap": 1921692888027,
+    "market_cap_rank": 1,
+    "fully_diluted_valuation": 2039526945802,
+    "total_volume": 53369732838,
+    "high_24h": 98926,
+    "low_24h": 96556,
+    "price_change_24h": -1763.2066852775752,
+    "price_change_percentage_24h": -1.78335,
+    "market_cap_change_24h": -31976749891.05078,
+    "market_cap_change_percentage_24h": -1.63675,
+    "circulating_supply": 19786721.0,
+    "total_supply": 21000000.0,
+    "max_supply": 21000000.0,
+    "ath": 99645,
+    "ath_change_percentage": -2.53404,
+    "ath_date": "2024-11-22T19:35:49.770Z",
+    "atl": 67.81,
+    "atl_change_percentage": 143126.31325,
+    "atl_date": "2013-07-06T00:00:00.000Z",
+    "roi": null,
+    "last_updated": "2024-11-24T14:44:21.583Z",
+    "price_change_percentage_24h_in_currency": -1.7833460709579636
+  },
+  {
+    "id": "ethereum",
+    "symbol": "eth",
+    "name": "Ethereum",
+    "image": "https://coin-images.coingecko.com/coins/images/279/large/ethereum.png?1696501628",
+    "current_price": 3320.21,
+    "market_cap": 399493722192,
+    "market_cap_rank": 2,
+    "fully_diluted_valuation": 399493722192,
+    "total_volume": 37148149900,
+    "high_24h": 3489.86,
+    "low_24h": 3294.64,
+    "price_change_24h": -165.33584612811774,
+    "price_change_percentage_24h": -4.74348,
+    "market_cap_change_24h": -20145385519.5625,
+    "market_cap_change_percentage_24h": -4.80065,
+    "circulating_supply": 120430905.515584,
+    "total_supply": 120430905.515584,
+    "max_supply": null,
+    "ath": 4878.26,
+    "ath_change_percentage": -31.99518,
+    "ath_date": "2021-11-10T14:24:19.604Z",
+    "atl": 0.432979,
+    "atl_change_percentage": 766092.66728,
+    "atl_date": "2015-10-20T00:00:00.000Z",
+    "roi": {
+      "times": 44.717739008815904,
+      "currency": "btc",
+      "percentage": 4471.773900881591
+    },
+    "last_updated": "2024-11-24T14:44:26.462Z",
+    "price_change_percentage_24h_in_currency": -4.743475148443595
   }
 ]
 """.data(using: .utf8)!

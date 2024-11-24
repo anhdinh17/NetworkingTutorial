@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		674D0BA42CF398FE008C72D6 /* CoinsViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674D0BA32CF398FE008C72D6 /* CoinsViewModelTest.swift */; };
+		674D0BA52CF3AC3D008C72D6 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E60C072CF36FF20026CD88 /* TestData.swift */; };
 		67E60BC92CF059370026CD88 /* NetworkingTutorialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E60BC82CF059370026CD88 /* NetworkingTutorialApp.swift */; };
 		67E60BCB2CF059370026CD88 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E60BCA2CF059370026CD88 /* ContentView.swift */; };
 		67E60BCD2CF059390026CD88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67E60BCC2CF059390026CD88 /* Assets.xcassets */; };
@@ -349,6 +350,7 @@
 				67E60BE42CF11ACE0026CD88 /* CoinAPIError.swift in Sources */,
 				67E60BF52CF2655B0026CD88 /* CoinDetailsCache.swift in Sources */,
 				67E60BE02CF0E8130026CD88 /* CoinDataService.swift in Sources */,
+				674D0BA52CF3AC3D008C72D6 /* TestData.swift in Sources */,
 				67E60BCB2CF059370026CD88 /* ContentView.swift in Sources */,
 				67E60BEE2CF18CE30026CD88 /* CoinDetailViewModel.swift in Sources */,
 				67E60BF22CF237C40026CD88 /* HTTPDataDownloader.swift in Sources */,
