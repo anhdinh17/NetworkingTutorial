@@ -22,7 +22,11 @@ class CoinDataService: CoinServiceProtocol, HTTPDataDownloader {
         guard let endpoint = allCoinsURLString else {
             throw CoinAPIError.requestFailed(description: "Invalid URL")
         }
-        // access protocol HTTPDataDownloader default implementation.
+        
+        // Access protocol HTTPDataDownloader default implementation.
+        // fetchData() throws error but we don't catch them here,
+        // we propagate them to the func who calls this fetchCoins() to catch.
+        // In this case, it's CoisViewModel.fetchCoins()
         return try await fetchData(as: [Coin].self, endpoint: endpoint)
     }
     

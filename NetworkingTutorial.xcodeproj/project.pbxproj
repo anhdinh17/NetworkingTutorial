@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		674D0BA42CF398FE008C72D6 /* CoinsViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674D0BA32CF398FE008C72D6 /* CoinsViewModelTest.swift */; };
 		67E60BC92CF059370026CD88 /* NetworkingTutorialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E60BC82CF059370026CD88 /* NetworkingTutorialApp.swift */; };
 		67E60BCB2CF059370026CD88 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E60BCA2CF059370026CD88 /* ContentView.swift */; };
 		67E60BCD2CF059390026CD88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67E60BCC2CF059390026CD88 /* Assets.xcassets */; };
@@ -21,9 +22,22 @@
 		67E60BF22CF237C40026CD88 /* HTTPDataDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E60BF12CF237C40026CD88 /* HTTPDataDownloader.swift */; };
 		67E60BF52CF2655B0026CD88 /* CoinDetailsCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E60BF42CF2655B0026CD88 /* CoinDetailsCache.swift */; };
 		67E60BF72CF2E0640026CD88 /* MockCoinService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E60BF62CF2E0640026CD88 /* MockCoinService.swift */; };
+		67E60BFF2CF2F52F0026CD88 /* NetworkingTutorialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E60BFE2CF2F52F0026CD88 /* NetworkingTutorialTests.swift */; };
+		67E60C082CF36FF20026CD88 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E60C072CF36FF20026CD88 /* TestData.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		67E60C002CF2F52F0026CD88 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67E60BBD2CF059370026CD88 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 67E60BC42CF059370026CD88;
+			remoteInfo = NetworkingTutorial;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		674D0BA32CF398FE008C72D6 /* CoinsViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsViewModelTest.swift; sourceTree = "<group>"; };
 		67E60BC52CF059370026CD88 /* NetworkingTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkingTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67E60BC82CF059370026CD88 /* NetworkingTutorialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTutorialApp.swift; sourceTree = "<group>"; };
 		67E60BCA2CF059370026CD88 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -39,10 +53,20 @@
 		67E60BF12CF237C40026CD88 /* HTTPDataDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPDataDownloader.swift; sourceTree = "<group>"; };
 		67E60BF42CF2655B0026CD88 /* CoinDetailsCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailsCache.swift; sourceTree = "<group>"; };
 		67E60BF62CF2E0640026CD88 /* MockCoinService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoinService.swift; sourceTree = "<group>"; };
+		67E60BFC2CF2F52F0026CD88 /* NetworkingTutorialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkingTutorialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		67E60BFE2CF2F52F0026CD88 /* NetworkingTutorialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTutorialTests.swift; sourceTree = "<group>"; };
+		67E60C072CF36FF20026CD88 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		67E60BC22CF059370026CD88 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67E60BF92CF2F52F0026CD88 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -56,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				67E60BC72CF059370026CD88 /* NetworkingTutorial */,
+				67E60BFD2CF2F52F0026CD88 /* NetworkingTutorialTests */,
 				67E60BC62CF059370026CD88 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				67E60BC52CF059370026CD88 /* NetworkingTutorial.app */,
+				67E60BFC2CF2F52F0026CD88 /* NetworkingTutorialTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -209,6 +235,16 @@
 			path = Cache;
 			sourceTree = "<group>";
 		};
+		67E60BFD2CF2F52F0026CD88 /* NetworkingTutorialTests */ = {
+			isa = PBXGroup;
+			children = (
+				67E60BFE2CF2F52F0026CD88 /* NetworkingTutorialTests.swift */,
+				67E60C072CF36FF20026CD88 /* TestData.swift */,
+				674D0BA32CF398FE008C72D6 /* CoinsViewModelTest.swift */,
+			);
+			path = NetworkingTutorialTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -229,6 +265,24 @@
 			productReference = 67E60BC52CF059370026CD88 /* NetworkingTutorial.app */;
 			productType = "com.apple.product-type.application";
 		};
+		67E60BFB2CF2F52F0026CD88 /* NetworkingTutorialTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67E60C022CF2F52F0026CD88 /* Build configuration list for PBXNativeTarget "NetworkingTutorialTests" */;
+			buildPhases = (
+				67E60BF82CF2F52F0026CD88 /* Sources */,
+				67E60BF92CF2F52F0026CD88 /* Frameworks */,
+				67E60BFA2CF2F52F0026CD88 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				67E60C012CF2F52F0026CD88 /* PBXTargetDependency */,
+			);
+			name = NetworkingTutorialTests;
+			productName = NetworkingTutorialTests;
+			productReference = 67E60BFC2CF2F52F0026CD88 /* NetworkingTutorialTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -241,6 +295,10 @@
 				TargetAttributes = {
 					67E60BC42CF059370026CD88 = {
 						CreatedOnToolsVersion = 15.4;
+					};
+					67E60BFB2CF2F52F0026CD88 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 67E60BC42CF059370026CD88;
 					};
 				};
 			};
@@ -258,6 +316,7 @@
 			projectRoot = "";
 			targets = (
 				67E60BC42CF059370026CD88 /* NetworkingTutorial */,
+				67E60BFB2CF2F52F0026CD88 /* NetworkingTutorialTests */,
 			);
 		};
 /* End PBXProject section */
@@ -269,6 +328,13 @@
 			files = (
 				67E60BD02CF059390026CD88 /* Preview Assets.xcassets in Resources */,
 				67E60BCD2CF059390026CD88 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67E60BFA2CF2F52F0026CD88 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +360,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		67E60BF82CF2F52F0026CD88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67E60BFF2CF2F52F0026CD88 /* NetworkingTutorialTests.swift in Sources */,
+				67E60C082CF36FF20026CD88 /* TestData.swift in Sources */,
+				674D0BA42CF398FE008C72D6 /* CoinsViewModelTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		67E60C012CF2F52F0026CD88 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 67E60BC42CF059370026CD88 /* NetworkingTutorial */;
+			targetProxy = 67E60C002CF2F52F0026CD88 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		67E60BD12CF059390026CD88 /* Debug */ = {
@@ -474,6 +558,42 @@
 			};
 			name = Release;
 		};
+		67E60C032CF2F52F0026CD88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L6M78ZXF68;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.anhdinh.NetworkingTutorialTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NetworkingTutorial.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NetworkingTutorial";
+			};
+			name = Debug;
+		};
+		67E60C042CF2F52F0026CD88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L6M78ZXF68;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.anhdinh.NetworkingTutorialTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NetworkingTutorial.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NetworkingTutorial";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -491,6 +611,15 @@
 			buildConfigurations = (
 				67E60BD42CF059390026CD88 /* Debug */,
 				67E60BD52CF059390026CD88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67E60C022CF2F52F0026CD88 /* Build configuration list for PBXNativeTarget "NetworkingTutorialTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67E60C032CF2F52F0026CD88 /* Debug */,
+				67E60C042CF2F52F0026CD88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

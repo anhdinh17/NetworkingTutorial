@@ -9,6 +9,11 @@ import Foundation
 
 class MockCoinService: CoinServiceProtocol {
     func fetchCoins() async throws -> [Coin] {
+        do {
+            
+        } catch {
+            
+        }
         let bitcoin = Coin(name: "BITCOIN", id: "Bitcoin", symbol: "BTC", currentPrice: 123456, marketCapRank: 1)
         return [bitcoin]
     }
