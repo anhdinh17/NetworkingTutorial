@@ -12,7 +12,7 @@ struct CoinDetailView: View {
     let coin: Coin
     
     // Dependency Injection
-    init(service: CoinDataService, coin: Coin) {
+    init(service: CoinServiceProtocol, coin: Coin) {
         self.coin = coin
         self._viewModel = StateObject(wrappedValue: CoinDetailViewModel(service: service,
                                                                         coinId: coin.id))

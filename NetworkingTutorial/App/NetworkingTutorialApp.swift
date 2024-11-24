@@ -11,8 +11,8 @@ import SwiftUI
 struct NetworkingTutorialApp: App {
     var body: some Scene {
         WindowGroup {
-            let service = CoinDataService()
-            ContentView(service: service)
+            // Injection starts here
+            ContentView(service: MockCoinService())
         }
     }
 }

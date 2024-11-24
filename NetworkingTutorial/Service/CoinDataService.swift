@@ -7,12 +7,22 @@
 
 import Foundation
 
-class CoinDataService: HTTPDataDownloader {
+/** ---NOTE---
+ - Use this protocol for Dependency Injection
+ - Any class conforms to this protocol can be injected.
+ */
+protocol CoinServiceProtocol {
+    func fetchCoins() async throws -> [Coin]
+    func fetchCoinDetails(id: String) async throws -> CoinDetails?
+}
+
+class CoinDataService: CoinServiceProtocol, HTTPDataDownloader {
     
     func fetchCoins() async throws -> [Coin] {
         guard let endpoint = allCoinsURLString else {
             throw CoinAPIError.requestFailed(description: "Invalid URL")
         }
+        // access protocol HTTPDataDownloader default implementation.
         return try await fetchData(as: [Coin].self, endpoint: endpoint)
     }
     

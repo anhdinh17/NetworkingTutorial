@@ -11,10 +11,10 @@ class CoinsViewModel: ObservableObject {
     @Published var coins: [Coin] = []
     @Published var errorMessage: String?
     
-    private let service: CoinDataService
+    private let service: CoinServiceProtocol
     
     // Dependency Injection
-    init(service: CoinDataService) {
+    init(service: CoinServiceProtocol) {
         self.service = service
         Task { await fetchCoins() }
     }
@@ -36,17 +36,17 @@ class CoinsViewModel: ObservableObject {
 }
 
 //MARK: - COMPLETION HANDLER
-extension CoinsViewModel {
-    func fetchCoinsWithCompletionHandler() {
-        service.fetchCoinsWithResult(completion: { result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let coins):
-                    self.coins = coins
-                case .failure(let error):
-                    self.errorMessage = error.localizedDescription
-                }
-            }
-        })
-    }
-}
+//extension CoinsViewModel {
+//    func fetchCoinsWithCompletionHandler() {
+//        service.fetchCoinsWithResult(completion: { result in
+//            DispatchQueue.main.async {
+//                switch result {
+//                case .success(let coins):
+//                    self.coins = coins
+//                case .failure(let error):
+//                    self.errorMessage = error.localizedDescription
+//                }
+//            }
+//        })
+//    }
+//}
