@@ -8,7 +8,7 @@
 import Foundation
 
 class MockCoinService: CoinServiceProtocol {
-    // Set the mockData we want
+    // Set the mockData we want (Unit Test)
     var mockData: Data?
     // Set the error (Unit Test)
     var mockError: CoinAPIError?
@@ -16,6 +16,11 @@ class MockCoinService: CoinServiceProtocol {
     func fetchCoins() async throws -> [Coin] {
         if let mockError { throw mockError }
         
+        // Have to handle errors
+        // if we just propagte errors to viewModel to catch,
+        // viewModel only catches error as CoinAPIError, lo nhu
+        // thang nay no co error nao do ma khong phai CoinAPIError thi
+        // viewModel ko catch duoc + Unit Test cung se fail
         do {
             // If there's no mockData, we use mockCoinData_marketCapDesc
             let coins = try JSONDecoder().decode([Coin].self, from: mockData ?? mockCoinData_marketCapDesc)
